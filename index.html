@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Handlebars</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="handlebars.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+    </head>
+    <body>
+        <script id="entry-template" type="text/x-handlebars-template">
+
+            <div class="pagina" align="center">
+                <h1> {{index.titulo}} </h1>
+                <div>
+                    <h3> {{index.cuerpo}} </h3>
+                </div>
+                <div>
+                    <h3>
+                        <a href="{{index.url}}">Ir a la libreria</a>
+                    </h3>
+                </div>
+
+                <div>
+                    {{#each personas~}}
+                        <div class="persona">
+
+                            {{#if this.profesion~}}
+                                <p>{{nombre}} {{apellido}} {{profesion}}</p>
+                            {{~else}}
+                                <p>{{nombre}} {{apellido}}</p>
+                            {{~/if}}
+
+                        </div>
+                    {{~/each}}
+                </div>
+
+
+            </div>
+
+        </script>
+        <div class="templateIndex"></div>
+    </body>
+</html>
